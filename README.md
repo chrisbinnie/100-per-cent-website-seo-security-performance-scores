@@ -874,14 +874,5 @@ Chris Binnie is a cybersecurity consultant and author with nearly thirty years o
 
 ---
 
-## Further Reading on Security Implementation
-
-- **[Complete Linux hardening techniques](https://chrisbinnie.github.io/linux-server-security)** - Essential SSH configuration, firewall setup, and intrusion detection strategies
-- **[Container and Kubernetes security](https://www.chrisbinnie.com/)** - Modern cloud security practices and DevSecOps implementation
-- **[Professional cybersecurity guidance](https://www.chrisbinnie.co.uk/)** - Expert insights on infrastructure protection and security architecture
-- **[Cloud infrastructure best practices](https://www.chrisbinnie.co.uk/)** - AWS security configuration and compliance strategies
-
----
-
 **⚠️ Important Security Notice:** All code examples, CloudFront Functions, security header configurations, and AWS commands in this guide are provided for educational purposes only. Before implementing any of these configurations on production systems, you must thoroughly test them in development and staging environments. Incorrect security header configurations can break website functionality, and improper AWS configurations can result in unexpected costs or security vulnerabilities. Always validate changes incrementally and maintain rollback procedures. The author assumes no liability for issues arising from the use of these examples.
 ```
