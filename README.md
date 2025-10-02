@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Grade A+ Website Security, SEO & Performance by Chris Binnie"
+description: "Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront,
+canonical_url: "https://chrisbinnie.github.io/100-per-cent-website-seo-security-performance-scores"
+---
+
 # Grade A+ Website Security, SEO & Performance By Chris Binnie
 
 Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront, plus some of the gotchas. This article shows real-world examples achieving A+ SSL Labs, 100% PageSpeed and 120/100 Mozilla Observatory scores. I hope you find it useful.
