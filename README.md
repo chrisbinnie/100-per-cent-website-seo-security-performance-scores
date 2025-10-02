@@ -1,15 +1,31 @@
-# 100% Website Security, Performance & SEO By Chris Binnie
+---
+layout: default
+title: "Grade A+ Website Security, SEO & Performance by Chris Binnie"
+description: "Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront, plus some of the gotchas. This article shows real-world examples achieving A+ SSL Labs, 100% PageSpeed, and 120/100 Mozilla Observatory scores."
+keywords: "AWS security, cloud security, hardening, hosting, security headers, AWS, CloudFront, CSS, javascript, website, scoring, pagespeed, compliance, threat protection, cybersecurity"
+author: "Chris Binnie"
+date: 2025-10-01
+last_modified_at: 2025-10-02
+canonical_url: "https://chrisbinnie.github.io/100-per-cent-website-seo-security-performance-scores"
+og_title: "Grade A+ Website Security, SEO & Performance by Chris Binnie"
+og_description: "Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront, plus some of the gotchas. This article shows real-world examples achieving A+ SSL Labs, 100% PageSpeed and 120/100 Mozilla Observatory scores."
+og_type: "article"
+twitter_card: "summary_large_image"
+schema_type: "TechnicalArticle"
+---
 
-Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront, plus some of the gotchas. This article shows real-world examples achieving A+ SSL Labs, 100% PageSpeed, and 120/100 Mozilla Observatory scores. I hope you find it useful.
+# Grade A+ Website Security, SEO & Performance By Chris Binnie
 
-**Last Updated:** 1 October 2025  
+Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront, plus some of the gotchas. This article shows real-world examples achieving A+ SSL Labs, 100% PageSpeed and 120/100 Mozilla Observatory scores. I hope you find it useful.
+
+**Last Updated:** 2nd October 2025
 **Author:** Chris Binnie, cybersecurity consultant, author & writer
 
 ---
 
-## Executive Summary
+## Introduction
 
-Achieving enterprise-level website security, performance, and SEO scores is not only possible but somewhat surprisingly it's really cost-effective. The information in this hard-won guide demonstrates how to build websites that achieve:
+Achieving enterprise-level website security, performance and SEO scores is not only possible but somewhat surprisingly it's really cost-effective. The information in this guide was hard-won and demonstrates how to build websites that achieve:
 
 - **SSL Labs Grade:** A+
 - **Mozilla HTTP Observatory:** 120/100 (perfect score)
@@ -17,11 +33,11 @@ Achieving enterprise-level website security, performance, and SEO scores is not 
 - **Google Lighthouse:** 100% across all metrics
 - **Security Headers:** All 11 critical headers properly configured
 
-**⚠️ Important Notice:** The code examples and configurations in this guide are for educational purposes. Do not implement these on production systems without extensive testing in development environments first. Improper configuration of security headers, CloudFront Functions, or AWS services can result in site downtime or security vulnerabilities. Consider yourself suitably warned!
+**⚠️ Important:** The code examples and configurations in this guide are only for reference. Do not implement these on production systems without extensive testing in development environments first! Improper configuration of security headers, CloudFront Functions or AWS services can result in downtime or security vulnerabilities. Use the information in this article at your own risk; you have been suitably warned!
 
 ---
 
-This page focuses on two real-world examples ([chrisbinnie.com](https://www.chrisbinnie.com) and [chrisbinnie.co.uk](https://www.chrisbinnie.co.uk)), and following some unwelcome eyestrain shares the architecture, configuration and implementation strategies that deliver enterprise-level results whilst maintaining costs of only around $1-2 monthly (excluding annual Domain Name fees).
+This page focuses on two real-world examples ([chrisbinnie.com](https://www.chrisbinnie.com) and [chrisbinnie.co.uk](https://www.chrisbinnie.co.uk)) and following some unwelcome eyestrain shares the architecture, configuration and implementation strategies that deliver enterprise-level results whilst maintaining costs of only around $1-$2 monthly (excluding annual Domain Name fees).
 
 ---
 
@@ -41,7 +57,7 @@ This page focuses on two real-world examples ([chrisbinnie.com](https://www.chri
 
 ## The Perfect Website Trinity: Security, Performance & SEO {#the-perfect-website-trinity}
 
-Modern websites face a challenging paradox: it's really tricky to get it right. Users demand instant loading times and seamless experiences, whilst security threats grow increasingly sophisticated. Search engines prioritise both security and performance in their ranking algorithms, making these three pillars—security, performance, and SEO—fundamentally interconnected.
+Modern websites face a challenging paradox: it's really tricky to get it right. Users demand instant loading times and seamless experiences, whilst security threats grow increasingly sophisticated. Search engines prioritise both security and performance in their ranking algorithms, making these three pillars—security, performance and SEO—fundamentally interconnected.
 
 ### Why Traditional Approaches Fail
 
@@ -53,28 +69,28 @@ Most websites struggle to achieve excellence across all three domains because th
 - **Employ frameworks** that add unnecessary bloat and attack surface
 - **Depend on shared hosting** with limited control over infrastructure
 
-The solution lies in architectural simplicity: **static sites with modern security headers, global content delivery, and zero dependencies**.
+The solution lies in architectural simplicity: **static sites with modern security headers, global content delivery and zero dependencies**.
 
 ### The Three Pillars Explained
 
-**Security** encompasses protecting your website and users from threats including cross-site scripting (XSS), clickjacking, man-in-the-middle attacks, and data breaches. Perfect security requires properly configured TLS/SSL, comprehensive HTTP security headers, and minimal attack surface.
+**Security** encompasses protecting your website and users from threats including cross-site scripting (XSS), clickjacking, man-in-the-middle attacks and data breaches. Perfect security requires properly configured TLS/SSL, comprehensive HTTP security headers and minimal attack surface.
 
-**Performance** measures how quickly your website loads and becomes interactive. Core Web Vitals—Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS)—directly impact user experience and search rankings.
+**Performance** measures how quickly your website loads and becomes interactive. Core Web Vitals—Largest Contentful Paint (LCP), First Input Delay (FID) and Cumulative Layout Shift (CLS)—directly impact user experience and search rankings.
 
-**SEO** (Search Engine Optimisation) determines your website's visibility in search results. Technical SEO requires fast loading times, mobile optimisation, proper schema markup, and secure connections—all factors that overlap with security and performance.
+**SEO** (Search Engine Optimisation) determines your website's visibility in search results. Technical SEO requires fast loading times, mobile optimisation, proper schema markup and secure connections—all factors that overlap with security and performance.
 
 
 ---
 
 ## Architecture: And Why Static Sites Win {#architecture-foundation}
 
-Static websites represent the optimal architecture for achieving perfect security, performance, and SEO scores. Unlike dynamic sites requiring server-side processing, databases and complex application logic, static sites serve pre-rendered HTML, CSS and JavaScript files directly to users. The main aim here was to avoid all library dependencies here to stop the ever-growing number of supply chain attacks and keep javascript as simple and clean as possible. It was frustrating at times but after the initial headaches the sites work well in most browsers and on mobiles and desktops.
+Static websites represent the optimal architecture for achieving perfect security, performance and SEO scores. Unlike dynamic sites requiring server-side processing, databases and complex application logic, static sites serve pre-rendered HTML, CSS and JavaScript files directly to users. The factors influencing the design were firstly to avoid absolutely all library dependencies (to stop the ever-growing number of supply chain attacks) and secondly show some simple functionality, but keep any javascript or CSS as secure and clean as possible. It was frustrating at times but after the initial headaches the sites work well in most browsers and on both mobiles and desktops.
 
 ### The Static Site Advantage
 
 **Security Benefits:**
-- **Zero server-side vulnerabilities:** No SQL injection, remote code execution, or business logic flaws
-- **Minimal attack surface:** Only HTML, CSS, and JavaScript—no backend to compromise
+- **Zero server-side vulnerabilities:** No SQL injection, remote code execution or business logic flaws
+- **Minimal attack surface:** Only HTML, CSS and JavaScript—no backend to compromise
 - **No authentication complexity:** Eliminates session management vulnerabilities
 - **Simplified dependency management:** Zero npm packages means zero CVEs
 
@@ -153,6 +169,8 @@ EOF
 aws s3api put-bucket-policy \
   --bucket www.your-domain.com \
   --policy file://bucket-policy.json
+
+```
 
 ---
 
@@ -428,7 +446,7 @@ Implement comprehensive meta tags:
 <!-- Primary Meta Tags -->
 <title>Linux Server Security: Complete Hardening Guide | Chris Binnie</title>
 <meta name="title" content="Linux Server Security: Complete Hardening Guide">
-<meta name="description" content="Expert Linux server security guidance covering Ubuntu, CentOS, Debian hardening, intrusion detection, and defence strategies.">
+<meta name="description" content="Expert Linux server security guidance covering Ubuntu, CentOS, Debian hardening, intrusion detection and defence strategies.">
 <meta name="keywords" content="linux security, server hardening, ubuntu security, centos security">
 <meta name="author" content="Chris Binnie">
 <link rel="canonical" href="https://www.chrisbinnie.com/linux-server-security">
@@ -437,7 +455,7 @@ Implement comprehensive meta tags:
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.chrisbinnie.com/linux-server-security">
 <meta property="og:title" content="Linux Server Security: Complete Hardening Guide">
-<meta property="og:description" content="Expert Linux server security guidance covering Ubuntu, CentOS, Debian hardening, intrusion detection, and defence strategies.">
+<meta property="og:description" content="Expert Linux server security guidance covering Ubuntu, CentOS, Debian hardening, intrusion detection and defence strategies.">
 <meta property="og:image" content="https://www.chrisbinnie.com/images/og-image.jpg">
 <meta property="og:locale" content="en_GB">
 
@@ -445,7 +463,7 @@ Implement comprehensive meta tags:
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://www.chrisbinnie.com/linux-server-security">
 <meta property="twitter:title" content="Linux Server Security: Complete Hardening Guide">
-<meta property="twitter:description" content="Expert Linux server security guidance covering Ubuntu, CentOS, Debian hardening, intrusion detection, and defence strategies.">
+<meta property="twitter:description" content="Expert Linux server security guidance covering Ubuntu, CentOS, Debian hardening, intrusion detection and defence strategies.">
 <meta property="twitter:image" content="https://www.chrisbinnie.com/images/twitter-image.jpg">
 ```
 
@@ -513,36 +531,41 @@ Despite it being a single-page website, it boasts enterprise-level SEO, performa
 
 **Test Results:**
 
+
 ```
-┌─────────────────────────────────┐
-│   SSL Labs (Qualys) Rating      │
-│                                 │
-│            A+                   │
-│                                 │
-│  ✓ Certificate                  │
-│  ✓ Protocol Support             │
-│  ✓ Key Exchange                 │
-│  ✓ Cipher Strength              │
-└─────────────────────────────────┘
++-----------------------------------+
+|   SSL Labs (Qualys) Rating        |
+|                                   |
+|            A+                     |
+|                                   |
+|  ✓ Certificate                    |
+|  ✓ Protocol Support               |
+|  ✓ Key Exchange                   |
+|  ✓ Cipher Strength                |
++-----------------------------------+
+```
 
-┌─────────────────────────────────┐
-│  Mozilla HTTP Observatory       │
-│                                 │
-│         A+  120/100             │
-│                                 │
-│    Tests Passed: 10 / 10        │
-└─────────────────────────────────┘
+```
++-----------------------------------+
+|  Mozilla HTTP Observatory         |
+|                                   |
+|         A+  120/100               |
+|                                   |
+|    Tests Passed: 10 / 10          |
++-----------------------------------+
+```
 
-┌─────────────────────────────────┐
-│    Google PageSpeed Insights    │
-│                                 │
-│  Performance:      100          │
-│  Accessibility:     96          │
-│  Best Practices:   100          │
-│  SEO:              100          │
-│                                 │
-│  (Both Mobile & Desktop)        │
-└─────────────────────────────────┘
+```
++-----------------------------------+
+|    Google PageSpeed Insights      |
+|                                   |
+|  Performance:      100            |
+|  Accessibility:     96            |
+|  Best Practices:   100            |
+|  SEO:              100            |
+|                                   |
+|  (Both Mobile & Desktop)          |
++-----------------------------------+
 ```
 
 **Security Headers Implemented:**
@@ -573,7 +596,7 @@ cache-control: public, max-age=60, must-revalidate
 x-cache: Hit from cloudfront
 ```
 
-**Monthly Cost Breakdown:**
+**(Very) Rough Estimated Monthly Costs:**
 
 ```
 AWS Services (estimated):
@@ -586,7 +609,7 @@ AWS Services (estimated):
                                       -------
 Total Monthly Cost:                   $0.60
 
-With moderate traffic (50K requests):  $1-2/month
+With moderate traffic (50K requests):  $1-$2/month
 ```
 
 **Additional Site:** The chrisbinnie.co.uk domain achieves identical security and performance scores using the same architecture and security header configuration.
@@ -731,7 +754,7 @@ echo "Deployment complete!"
 
 ## Conclusion and Next Steps {#conclusion}
 
-In my experience achieving perfect website security, performance, and SEO scores is entirely achievable through architectural simplicity, comprehensive security headers, and modern hosting infrastructure. The examples of chrisbinnie.com and chrisbinnie.co.uk demonstrate that professional results don't require complex solutions or significant investment.
+In my experience achieving perfect website security, performance and SEO scores is entirely achievable through architectural simplicity, comprehensive security headers and modern hosting infrastructure. The examples of chrisbinnie.com and chrisbinnie.co.uk demonstrate that professional results don't require complex solutions or significant investment.
 
 ### Things To Think About
 
@@ -848,11 +871,11 @@ Track these metrics monthly:
 
 ### The End Is Nigh
 
-The journey to perfect website security, performance, and SEO scores begins with architectural decisions. By choosing static site hosting on AWS S3 and CloudFront, implementing comprehensive security headers through CloudFront Functions, and optimising every aspect of content delivery, you can achieve enterprise-level professional results—for monthly costs of $1-2.
+The journey to perfect website security, performance and SEO scores begins with architectural decisions. By choosing static site hosting on AWS S3 and CloudFront, implementing comprehensive security headers through CloudFront Functions and optimising every aspect of content delivery, you can achieve enterprise-level professional results—for monthly costs of $1-$2.
 
-The real-world examples presented demonstrate that these aren't theoretical ideals but practical, proven architectures delivering exceptional results in production environments. With total monthly costs under $2, zero dependencies to maintain, and perfect scores across all testing platforms, this approach represents the optimal balance of security, performance, cost, and maintenance overhead.
+The real-world examples presented demonstrate that these aren't theoretical ideals but practical, proven architectures delivering exceptional results in production environments. With total monthly costs under $2, zero dependencies to maintain and perfect scores across all testing platforms, this approach represents the optimal balance of security, performance, cost and maintenance overhead.
 
-Whether you're building a personal portfolio, company website, or documentation platform, these principles and implementation strategies provide a roadmap to excellence. Start with the foundation, implement security comprehensively, optimise performance relentlessly, and maintain your infrastructure diligently. The result will be a website that excels in every measurable metric whilst requiring minimal ongoing attention and delivering enterprise-level performance.
+Whether building a personal portfolio, company website or documentation platform, these principles and implementation strategies provide a roadmap to excellence. Start with the foundation, implement security comprehensively, optimise performance relentlessly and maintain your infrastructure diligently. The result will be a website that excels in every measurable metric whilst requiring minimal ongoing attention and delivering enterprise-level performance.
 
 ---
 
@@ -860,17 +883,18 @@ Whether you're building a personal portfolio, company website, or documentation 
 
 Explore these comprehensive guides for deeper insights into specific topics:
 
-- **[Linux Server Security Guide](https://chrisbinnie.github.io/linux-server-security)** - Complete hardening and protection manual covering Ubuntu, CentOS, RHEL, and Debian server security
-- **[Cloud Native Security Resources](https://www.chrisbinnie.com/)** - Expert guidance on container security, Kubernetes hardening, and DevSecOps practices
-- **[Cybersecurity Expertise](https://www.chrisbinnie.co.uk/)** - Professional insights and practical guides on infrastructure security and threat protection
-- **[AWS Infrastructure Security](https://www.chrisbinnie.co.uk/)** - Detailed tutorials on securing cloud infrastructure and implementing best practices
+- **[Linux Server Security Guide](https://chrisbinnie.github.io/linux-server-security)** - Complete hardening and protection manual covering Ubuntu, CentOS, RHEL and Debian server security
+- **[Cloud Native Security Resources](https://www.chrisbinnie.com)** - Expert guidance on container security, Kubernetes hardening and DevSecOps practices
+- **[Cybersecurity Books By Chris Binnie](https://www.chrisbinnie.co.uk)** - Professional insights and practical guides on infrastructure security and threat protection
+- **[AWS Infrastructure Security](https://chrisbinnie.github.io/aws-cloud-security)** - Detailed tutorials on securing cloud infrastructure and implementing best practices
+- **[Kubernetes Security](https://chrisbinnie.github.io/kubernetes-security)** - Harden your Kubernetes clusters, fixing network policies and RBAC configurations
 
 ---
 
 **About the Author**
 
-Chris Binnie is a cybersecurity consultant and author with nearly thirty years of experience in information security. He has authored multiple cybersecurity books including *Cloud Native Security* (co-authored with Rory McCune), *Linux Server Security: Hack and Defend*, and *Practical Linux Topics*. Based in Edinburgh, Scotland, Chris has been a regular contributor to Linux Magazine and ADMIN Magazine for over 15 years. His practical experience includes founding a colocation business achieving zero downtime through redundant infrastructure, and designing cloud-based streaming platforms serving HD video to 77 countries.
+Chris Binnie is a cybersecurity consultant and author with nearly thirty years of experience in information security. He has authored multiple cybersecurity books including *Cloud Native Security* (co-authored with Rory McCune), *Linux Server Security: Hack and Defend* and *Practical Linux Topics*. Based in Edinburgh, Scotland, Chris has been a regular contributor to Linux Magazine and ADMIN Magazine for around 15 years. His practical experience includes founding a colocation business achieving zero downtime through redundant infrastructure and designing cloud-based streaming platforms serving HD video to 77 countries.
 
 ---
 
-**⚠️ Important Security Notice:** All code examples, CloudFront Functions, security header configurations, and AWS commands in this guide are provided for educational purposes only. Before implementing any of these configurations on production systems, you must thoroughly test them in development and staging environments. Incorrect security header configurations can break website functionality, and improper AWS configurations can result in unexpected costs or security vulnerabilities. Always validate changes incrementally and maintain rollback procedures. The author assumes no liability for issues arising from the use of these examples.
+**⚠️ Important:** All information in this guide is provided for reference purposes only and should be treated as untested! Before implementing any of these configurations on production systems, thoroughly test them in development environments. Use the information at your own risk.
