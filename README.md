@@ -154,7 +154,6 @@ aws s3api put-bucket-policy \
   --bucket www.your-domain.com \
   --policy file://bucket-policy.json
 
-```markdown
 ---
 
 ## Performance Optimisation: 100% PageSpeed Scores {#performance-optimisation}
@@ -734,7 +733,7 @@ echo "Deployment complete!"
 
 In my experience achieving perfect website security, performance, and SEO scores is entirely achievable through architectural simplicity, comprehensive security headers, and modern hosting infrastructure. The examples of chrisbinnie.com and chrisbinnie.co.uk demonstrate that professional results don't require complex solutions or significant investment.
 
-### Key Takeaways
+### Things To Think About
 
 **Architecture:**
 - Static sites provide superior security and performance
@@ -822,7 +821,7 @@ Track these metrics monthly:
 - User engagement metrics
 - Monthly hosting costs
 
-### Resources and Further Reading
+### Further Reading
 
 **Official Documentation:**
 - [AWS S3 Documentation](https://docs.aws.amazon.com/s3/)
@@ -847,7 +846,7 @@ Track these metrics monthly:
 - [Web.dev by Google](https://web.dev/)
 - [MDN Web Docs](https://developer.mozilla.org/)
 
-### Final Thoughts
+### The End Is Nigh
 
 The journey to perfect website security, performance, and SEO scores begins with architectural decisions. By choosing static site hosting on AWS S3 and CloudFront, implementing comprehensive security headers through CloudFront Functions, and optimising every aspect of content delivery, you can achieve enterprise-level professional results—for monthly costs of $1-2.
 
@@ -875,4 +874,3 @@ Chris Binnie is a cybersecurity consultant and author with nearly thirty years o
 ---
 
 **⚠️ Important Security Notice:** All code examples, CloudFront Functions, security header configurations, and AWS commands in this guide are provided for educational purposes only. Before implementing any of these configurations on production systems, you must thoroughly test them in development and staging environments. Incorrect security header configurations can break website functionality, and improper AWS configurations can result in unexpected costs or security vulnerabilities. Always validate changes incrementally and maintain rollback procedures. The author assumes no liability for issues arising from the use of these examples.
-```
