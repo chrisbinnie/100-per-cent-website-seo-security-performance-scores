@@ -1,8 +1,17 @@
 ---
 layout: default
-title: "Grade A+ Website Security, SEO & Performance by Chris Binnie"
-description: "Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront."
-canonical_url: "https://chrisbinnie.github.io/100-per-cent-website-seo-security-performance-scores"
+title: "Perfect Grade A+ Website Security, SEO & Performance by Chris Binnie"
+description: "AWS cloud security for SEO, performance and perfect compliance scores."
+keywords: "AWS security, cloud security, IAM hardening, VPC security, AWS WAF, GuardDuty, CloudTrail, compliance, threat protection, cybersecurity"
+author: "Chris Binnie"
+date: 2025-09-09
+last_modified_at: 2025-09-09
+canonical_url: "https://chrisbinnie.github.io/aws-cloud-security"
+og_title: "Perfect Grade A+ Website Security, SEO & Performance by Chris Binnie"
+og_description: "AWS cloud security for SEO, performance and perfect compliance scores."
+og_type: "article"
+twitter_card: "summary_large_image"
+schema_type: "TechnicalArticle"
 ---
 
 # Grade A+ Website Security, SEO & Performance By Chris Binnie
