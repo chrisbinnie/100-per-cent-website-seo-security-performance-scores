@@ -877,7 +877,7 @@ Explore these comprehensive guides for deeper insights into specific topics:
 
 **About the Author**
 
-Chris Binnie is a cybersecurity consultant and author with nearly thirty years of experience in information security. He has authored multiple cybersecurity books including *Cloud Native Security* (co-authored with Rory McCune), *Linux Server Security: Hack and Defend* and *Practical Linux Topics*. Based in Edinburgh, Scotland, Chris has been a regular contributor to Linux Magazine and ADMIN Magazine for around 15 years. His practical experience includes founding a colocation business achieving zero downtime through redundant infrastructure and designing cloud-based streaming platforms serving HD video to 77 countries.
+Chris Binnie is a cybersecurity consultant and author with nearly thirty years of experience in information security. He has authored multiple cybersecurity books including *Cloud Native Security* (co-authored with Rory McCune), *Linux Server Security: Hack and Defend* and *Practical Linux Topics*. Based in Edinburgh, Scotland, Chris has been a regular contributor to Linux Magazine and ADMIN Magazine for around 15 years. His practical experience includes founding a colocation business in 2001 to achieve zero downtime through redundant infrastructure and designing cloud-based streaming platforms serving HD video to 77 countries in 2012.
 
 ---
 
