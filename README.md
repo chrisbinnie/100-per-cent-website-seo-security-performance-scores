@@ -17,7 +17,7 @@ Achieving enterprise-level website security, performance and SEO scores is not o
 - **Google Lighthouse:** 100% across all metrics
 - **Security Headers:** All 11 critical headers properly configured
 
-**⚠️ Important:** The code examples and configurations in this guide are only for reference. Do not implement these on production systems without extensive testing in development environments first! Improper configuration of security headers, CloudFront Functions or AWS services can result in downtime or security vulnerabilities. Use the information in this article at your own risk; you have been suitably warned!
+**⚠️ Important:** The code examples and configurations in this guide are only for reference. Improper configuration of security headers, CloudFront Functions or AWS services can cause downtime or introduce security vulnerabilities. Use the information in this article at your own risk; you have been suitably warned!
 
 ---
 
@@ -27,7 +27,7 @@ This page focuses on two real-world examples ([chrisbinnie.com](https://www.chri
 
 ## Table of Contents
 
-1. [The Perfect Website Trinity: Security, Performance & SEO](#the-perfect-website-trinity)
+1. [Creating The Perfect Website: Security, Performance & SEO](#the-perfect-website-trinity)
 2. [Architecture Foundation: Why Static Sites Win](#architecture-foundation)
 3. [AWS Infrastructure Setup: S3 and CloudFront](#aws-infrastructure-setup)
 4. [Security Implementation: Achieving A+ Ratings](#security-implementation)
@@ -39,7 +39,7 @@ This page focuses on two real-world examples ([chrisbinnie.com](https://www.chri
 
 ---
 
-## The Perfect Website Trinity: Security, Performance & SEO {#the-perfect-website-trinity}
+## Creating The Perfect Website: Security, Performance & SEO {#the-perfect-website-trinity}
 
 Modern websites face a challenging paradox: it's really tricky to get it right. Users demand instant loading times and seamless experiences, whilst security threats grow increasingly sophisticated. Search engines prioritise both security and performance in their ranking algorithms, making these three pillars—security, performance and SEO—fundamentally interconnected.
 
