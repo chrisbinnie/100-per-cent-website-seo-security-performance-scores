@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Grade A+ Website Security, SEO & Performance by Chris Binnie"
-description: "Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront,
+description: "Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront."
 canonical_url: "https://chrisbinnie.github.io/100-per-cent-website-seo-security-performance-scores"
 ---
 
