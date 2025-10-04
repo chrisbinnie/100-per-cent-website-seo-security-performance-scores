@@ -322,7 +322,7 @@ if (document.readyState === 'loading') {
 
 ### Image Optimisation
 
-Implement modern image formats and techniques:
+Implement modern image formats and techniques (this route wasn't used, choosing heavily optimised JPGs instead):
 
 ```html
 <!-- Responsive images with modern formats -->
@@ -373,7 +373,7 @@ CloudFront automatically compresses:
 - JSON and XML data
 - SVG images
 
-Compression reduces file sizes by 70-90% for text-based resources. It's a real eye-opener if you do some Brotli and gzip compression tests. In my experience it makes a big difference to the browsing experience.
+Compression reduces file sizes by 70-90% for text-based resources. It's a real eye-opener if you do some Brotli and gzip compression tests. In my experience it makes a big difference to the browsing UX.
 
 ---
 
@@ -522,10 +522,10 @@ Despite it being a single-page website, it boasts enterprise-level SEO, performa
 |                                   |
 |            A+                     |
 |                                   |
-|  ✓ Certificate                    |
-|  ✓ Protocol Support               |
-|  ✓ Key Exchange                   |
-|  ✓ Cipher Strength                |
+|  o Certificate                    |
+|  o Protocol Support               |
+|  o Key Exchange                   |
+|  o Cipher Strength                |
 +-----------------------------------+
 ```
 
