@@ -2,7 +2,7 @@
 
 Learn how to achieve perfect scores for website security, performance and SEO using AWS S3 and CloudFront, plus some of the gotchas. This article shows real-world examples achieving A+ SSL Labs, 100% PageSpeed and 120/100 Mozilla Observatory scores. I hope you find it useful.
 
-**Last Updated:** 2nd October 2025
+**Last Updated:** 4th November 2025
 **Author:** Chris Binnie, cybersecurity consultant, author & writer
 
 ---
@@ -877,7 +877,7 @@ Explore these comprehensive guides for deeper insights into specific topics:
 
 **About the Author**
 
-Chris Binnie is a cybersecurity consultant and author with nearly thirty years of experience in information security. He has authored multiple cybersecurity books including *Cloud Native Security* (co-authored with Rory McCune), *Linux Server Security: Hack and Defend* and *Practical Linux Topics*. Based in Edinburgh, Scotland, Chris has been a regular contributor to Linux Magazine and ADMIN Magazine for around 15 years. His practical experience includes founding a colocation business in 2001 to achieve zero downtime through redundant infrastructure and designing cloud-based streaming platforms serving HD video to 77 countries in 2012.
+[Chris Binnie](https://chrisbinnie.github.io/about.html) is a cybersecurity consultant and author with nearly thirty years of experience in information security. He has authored multiple cybersecurity books including *Cloud Native Security* (co-authored with Rory McCune), *Linux Server Security: Hack and Defend* and *Practical Linux Topics*. Based in Edinburgh, Scotland, Chris has been a regular contributor to Linux Magazine and ADMIN Magazine for around 15 years. His practical experience includes founding a colocation business in 2001 to achieve zero downtime through redundant infrastructure and designing cloud-based streaming platforms serving HD video to 77 countries in 2012.
 
 ---
 
